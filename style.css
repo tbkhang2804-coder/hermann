@@ -1,0 +1,221 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* --- CSS Variables for Colors --- */
+:root {
+    --primary-blue: #005A9C;
+    --secondary-blue: #007BFF;
+    --accent-blue: #87CEEB;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --light-text: #f8f9fa;
+    --border-color: #dee2e6;
+}
+
+/* --- General Styles & Reset --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: #fff;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 80px; /* Increased logo size */
+    transition: transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-blue);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Banner Section --- */
+.banner {
+    background: linear-gradient(rgba(0, 90, 156, 0.7), rgba(0, 90, 156, 0.7)), url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2072&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    color: var(--light-text);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.banner p {
+    font-size: 1.25rem;
+}
+
+/* --- Page Layout (Content + Sidebar) --- */
+.page-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+/* --- Section & Card Styles --- */
+section {
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card h4 {
+    color: var(--secondary-blue);
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* --- News & Sidebar Specifics --- */
+.news-article, .sidebar-widget {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.news-article h4 {
+    margin-top: 0;
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+}
+
+.sidebar-widget h3 {
+    margin-top: 0;
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.sidebar-widget ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar-widget ul li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.sidebar-widget ul li a:hover {
+    color: var(--secondary-blue);
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+
